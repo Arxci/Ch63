@@ -172,6 +172,18 @@ var UserMove = {};
 UserMove.from = SQUARES.NO_SQ;
 UserMove.to = SQUARES.NO_SQ;
 
+windowSize = 1;
+$(window).resize(function() {
+   //window width
+   console.log($(window).width())
+  if ($(window).width() <= 768) {
+    windowSize = 2;
+  } else {
+    windowSize = 1;
+  }
+
+}).trigger("resize")
+
 
 
 

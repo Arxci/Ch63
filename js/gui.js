@@ -93,8 +93,8 @@ function ClickedSquare(pageX, pageY) {
 	pageX = Math.floor(pageX);
 	pageY = Math.floor(pageY);
 	
-	var file = Math.floor((pageX-workedX) / 60);
-	var rank = 7 - Math.floor((pageY-workedY) / 60);
+	var file = Math.floor((pageX-workedX) / (60 / windowSize));
+	var rank = 7 - Math.floor((pageY-workedY) / (60 / windowSize));
 	
 	var sq = FR2SQ(file,rank);
 	
@@ -180,8 +180,8 @@ function MakeUserMove() {
 
 function PieceIsOnSq(sq, top, left) {
 
-	if( (RanksBrd[sq] == 7 - Math.round(top/60) ) && 
-		FilesBrd[sq] == Math.round(left/60) ) {
+	if( (RanksBrd[sq] == 7 - Math.round(top/(60 / windowSize)) ) && 
+		FilesBrd[sq] == Math.round(left/(60 / windowSize)) ) {
 		return BOOL.TRUE;
 	}
 		
