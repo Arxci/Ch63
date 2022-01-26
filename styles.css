@@ -100,6 +100,17 @@ header {
 	cursor: pointer;
 }
 
+.Square.enemy::after {
+	content: '';
+	position: absolute;
+	background-color: #ed493e;
+	opacity: .8;
+	width:	100%;
+	height: 100%;
+	animation: load-square 300ms ease-in-out forwards;
+	cursor: pointer;
+}
+
 .Dark {
 	background-color:#3e6640;
 }
@@ -116,6 +127,11 @@ header {
 	padding: 2rem 0;
 	font-size: 2rem;
 	font-weight: 1000;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2rem;
 }
 
 .rank1 { top: 420px; }

@@ -116,7 +116,13 @@ $(document).on('click','.Piece', function (e) {
 			to = TOSQ(move)
 			from = FROMSQ(move)
 			if (UserMove.from == from ) {
-				$(squares[SQ64(to)]).addClass('to')
+				if (GameBoard.pieces[to] != 0) {
+					$(squares[SQ64(to)]).addClass('enemy');
+
+				} else {
+					$(squares[SQ64(to)]).addClass('to');
+					console.log(GameBoard.pieces[to])
+				}
 			}
 		}
 	} else {
@@ -125,7 +131,8 @@ $(document).on('click','.Piece', function (e) {
 		for(index = GameBoard.moveListStart[GameBoard.ply]; index < GameBoard.moveListStart[GameBoard.ply+1]; ++index) {
 			move = GameBoard.moveList[index];
 			to = TOSQ(move)
-			$(squares[SQ64(to)]).removeClass('to')
+			$(squares[SQ64(to)]).removeClass('to');
+			$(squares[SQ64(to)]).removeClass('enemy')
 		}
 	}
 	
@@ -139,6 +146,7 @@ $(document).on('click','.Square', function (e) {
 		move = GameBoard.moveList[index];
 		to = TOSQ(move)
 		$(squares[SQ64(to)]).removeClass('to')
+		$(squares[SQ64(to)]).removeClass('enemy')
 	}
 	if(UserMove.from != SQUARES.NO_SQ) {
 		UserMove.to = ClickedSquare(e.pageX, e.pageY);
