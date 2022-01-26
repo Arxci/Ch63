@@ -184,6 +184,46 @@ header {
 	}
 }
 
+@media (max-width: 768px) {
+	.Square {
+		height: 30px;
+		width: 30px;
+	}
+
+	#Board {
+		width: 240px;
+		height: 240px;
+	}
+
+	.rank1 { top: 210px; }
+	.rank2 { top: 180px; }
+	.rank3 { top: 150px; }
+	.rank4 { top: 120px; }
+	.rank5 { top: 90px; }
+	.rank6 { top: 60px; }
+	.rank7 { top: 30px; }
+	.rank8 { top: 0px; }
+
+	.file1 { left: 0px; }
+	.file2 { left: 30px; }
+	.file3 { left: 60px; }
+	.file4 { left: 90px; }
+	.file5 { left: 120px; }
+	.file6 { left: 150px; }
+	.file7 { left: 180px; }
+	.file8 { left: 210px; }
+
+	.Piece {
+		height: 30px;
+		width: 30px;
+		font-size: 20px;
+	}
+
+	header {
+		font-size: 2rem;
+	}
+}
+
 
 
 
