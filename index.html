@@ -12,15 +12,22 @@
 		<title>Chess Engine</title>
 	</head>
 	<body>
-		<header>
-			Chess Engine
+		<header class="header">
+			<nav class="header__nav">
+				<h1>
+					Chess Engine
+				</h1>
+			</nav>
 		</header>
 		<div class="board-container">
 
-			<div id="Board">
+			<div id="Board" class="board">
 			</div>
-
-			<span id="GameStatus"></span>
+			<div class="game__status">
+				<div id="GameStatus">
+				</div>
+				<button class="play__again__btn">Play Again</button>
+			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="js/defs.js"></script>	

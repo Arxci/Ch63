@@ -136,6 +136,11 @@ function init() {
 	InitBoardVars();
 	InitMvvLva();
 	InitBoardSquares();
+
+	const playAgain = document.querySelector('.play__again__btn');
+	playAgain.addEventListener('click', () => {
+		window.location.reload();
+	})
 }
 
 

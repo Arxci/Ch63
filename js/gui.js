@@ -304,17 +304,20 @@ function ThreeFoldRep() {
 
 function CheckResult() {
 	if(GameBoard.fiftyMove >= 100) {
-		 $("#GameStatus").text("GAME DRAWN {fifty move rule}"); 
+		 $("#GameStatus").text("GAME DRAWN"); 
+		 $(".game__status").addClass('active');
 		 return BOOL.TRUE;
 	}
 	
 	if (ThreeFoldRep() >= 2) {
-     	$("#GameStatus").text("GAME DRAWN {3-fold repetition}"); 
+     	$("#GameStatus").text("GAME DRAWN"); 
+		 $(".game__status").addClass('active');
      	return BOOL.TRUE;
     }
 	
 	if (DrawMaterial() == BOOL.TRUE) {
-     	$("#GameStatus").text("GAME DRAWN {insufficient material to mate}"); 
+     	$("#GameStatus").text("GAME DRAWN"); 
+		 $(".game__status").addClass('active');
      	return BOOL.TRUE;
     }
     
@@ -339,14 +342,18 @@ function CheckResult() {
 	
 	if(InCheck == BOOL.TRUE) {
 		if(GameBoard.side == COLOURS.WHITE) {
-	      $("#GameStatus").text("GAME OVER {black mates}");
+	      $("#GameStatus").text("YOU LOSE");
+		  $(".game__status").addClass('active');
 	      return BOOL.TRUE;
         } else {
-	      $("#GameStatus").text("GAME OVER {white mates}");
+	      $("#GameStatus").text("YOU WIN");
+		  $(".game__status").addClass('active');
 	      return BOOL.TRUE;
         }
 	} else {
-		$("#GameStatus").text("GAME DRAWN {stalemate}");return BOOL.TRUE;
+		$("#GameStatus").text("GAME DRAWN");
+		$(".game__status").addClass('active');
+		return BOOL.TRUE;
 	}
 }
 
